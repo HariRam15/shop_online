@@ -16,7 +16,9 @@ class OrdersScreen extends StatelessWidget {
       drawer: AppDrawer(),
       body: ListView.builder(
         itemCount: ordersData.orders.length,
-        itemBuilder: (context, index) => OrderItemW(ordersData.orders[index]),
+        itemBuilder: (context, index) => OrderItemW(
+          ordersData.orders[index],
+        ),
       ),
     );
   }

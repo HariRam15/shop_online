@@ -68,6 +68,27 @@ class Cart with ChangeNotifier {
     notifyListeners();
   }
 
+  //to remove only single item
+  void removeSingleItem(productId) {
+    if (!_items.containsKey(productId)) {
+      return;
+    }
+    if (_items[productId].quantity > 1) {
+      _items.update(
+        productId,
+        (exestingItem) => CartItem(
+          id: exestingItem.id,
+          name: exestingItem.name,
+          price: exestingItem.price,
+          quantity: exestingItem.quantity - 1,
+        ),
+      );
+    } else {
+      _items.remove(productId);
+    }
+    notifyListeners();
+  }
+
 //need to clear the cart once the order is placed
   void clear() {
     _items = {};

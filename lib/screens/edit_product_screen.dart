@@ -112,11 +112,12 @@ class _EditproductScreenState extends State<EditproductScreen> {
             ),
             content: Text("Something went wrong"),
             actions: [
-              FlatButton(
-                  onPressed: () {
-                    Navigator.of(context).pop();
-                  },
-                  child: Text('Okay'))
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: Text('Okay'),
+              ),
             ],
           ),
         );
